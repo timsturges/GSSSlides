@@ -46,10 +46,9 @@
     <h2>About The App</h2>
   </hgroup>
   <article data-timings="">
-    <p>I tend to have a strong interest in social issues. As such, I have created an app 
-which will quickly and easily allow one to explore the relationship between two 
-categorical variables related to attitudes on national spending as measured by 
-the General Social Survey.  </p>
+    <p>I have created an app which will quickly and easily allow one to explore the 
+relationship between two categorical variables related to attitudes on national 
+spending as measured by the General Social Survey.  </p>
 
 <p>For those unfamiliar, The General Social Survey is a biennial national survey conducted 
 by the National Opinion Research Center at the University of Chicago. It is a reliable 
@@ -66,19 +65,19 @@ For more information, please visit the GSS website: <a href="http://www3.norc.or
   </hgroup>
   <article data-timings="">
     <p>In the interest of simplicity and focused attention, I have selected a subset of 
-variables from the complete survey which are limited towards attitudes on national 
-spending. Speaking broadly, I find that since we all pay taxes, we tend to have an opinion 
-about how our tax revenue ought to be spent, and national spending seems to be a good 
-indicator for our citizens&#39; attidues on national priorities.  </p>
+variables from the complete survey which are limited to attitudes on national 
+spending. Speaking broadly, national populations appear to have strong opinions 
+regarding how our tax revenue ought to be spent, and national spending seems to 
+be a good indicator for our citizens&#39; attidues regarding national priorities.  </p>
 
 <p>The variables available in the app are both categorical with three response levels: 
-&quot;About Right&quot;, &quot;Too Little&quot;, and &quot;Too Much&quot;. The app asks the user to select two variables, 
-each of which is a national spending program (or category thereof), and a year of 
-interest. This creates a subset of the data based on the year of interest, and then 
-renders a mosaic plot representing the relationship between the two variables as 
-a box with area porportional to the whole plot. Below the plot is a proportion table 
-which explicitly states those proportions as percent values. Following that is a 
-Chi-Square test of independence which determines whether or not we can conclude 
+&quot;About Right&quot;, &quot;Too Little&quot;, and &quot;Too Much&quot;. The app asks the user to select two 
+variables, each of which is a national spending program (or category thereof), and 
+a year of interest. This creates a subset of the data based on the year of interest, 
+and then renders a mosaic plot representing the relationship between the two variables 
+as a box with area porportional to the whole plot. Below the plot is a proportion 
+table which explicitly states those proportions as percent values. Following that 
+is a Chi-Square test of independence which determines whether or not we can conclude 
 that two variables are related at the 5% significance level.</p>
 
   </article>
@@ -90,9 +89,9 @@ that two variables are related at the 5% significance level.</p>
     <h2>For Example</h2>
   </hgroup>
   <article data-timings="">
-    <p>This is a sample mosaic plot which generates 1000 theoretical survey observations. 
-They are random, but probability weighted, and are generated each time the page 
-is reloaded.
+    <p>This is a sample mosaic plot which generates 1000 randomly-generated survey observations. 
+Though the observations are randomly generated each time the page is reloaded, 
+they are probability weighted, and will therefore tend produce similar results.
 <img src="figure/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
 
   </article>
@@ -106,15 +105,15 @@ is reloaded.
   <article data-timings="">
     <pre><code>##              
 ##               About Right Too Little Too Much
-##   About Right         2.3        8.2     11.7
-##   Too Little          1.3        3.6      4.9
-##   Too Much            7.6       27.5     32.9
+##   About Right         1.4        8.4      9.6
+##   Too Little          1.3        4.2      4.6
+##   Too Much            7.9       27.6     35.0
 </code></pre>
 
 <pre><code>## Number of cases in table: 1000 
 ## Number of factors: 2 
 ## Test for independence of all factors:
-##  Chisq = 1.9, df = 4, p-value = 0.8
+##  Chisq = 4, df = 4, p-value = 0.4
 </code></pre>
 
 <pre><code>## [1] &quot;Null Hypothesis: These two variables are independent.&quot;
