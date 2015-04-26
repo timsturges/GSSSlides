@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>General Social Survey Visualizer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="General Social Survey Visualizer">
+  <meta name="author" content="Tim Sturges">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>General Social Survey Visualizer</h1>
+    <h2>National Attitudes On Spending</h2>
+    <p>Tim Sturges<br/>Audio Engineer, Aspirant Data Scientist</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>About The App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>I tend to have a strong interest in social issues. As such, I have created an app 
+which will quickly and easily allow one to explore the relationship between two 
+categorical variables related to attitudes on national spending as measured by 
+the General Social Survey.  </p>
+
+<p>For those unfamiliar, The General Social Survey is a biennial national survey conducted 
+by the National Opinion Research Center at the University of Chicago. It is a reliable 
+and thorough measurement of various national attitudes and trends in the United States. 
+For more information, please visit the GSS website: <a href="http://www3.norc.org/GSS+Website/">http://www3.norc.org/GSS+Website/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>More About The App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the interest of simplicity and focused attention, I have selected a subset of 
+variables from the complete survey which are limited towards attitudes on national 
+spending. Speaking broadly, I find that since we all pay taxes, we tend to have an opinion 
+about how our tax revenue ought to be spent, and national spending seems to be a good 
+indicator for our citizens&#39; attidues on national priorities.  </p>
+
+<p>The variables available in the app are both categorical with three response levels: 
+&quot;About Right&quot;, &quot;Too Little&quot;, and &quot;Too Much&quot;. The app asks the user to select two variables, 
+each of which is a national spending program (or category thereof), and a year of 
+interest. This creates a subset of the data based on the year of interest, and then 
+renders a mosaic plot representing the relationship between the two variables as 
+a box with area porportional to the whole plot. Below the plot is a proportion table 
+which explicitly states those proportions as percent values. Following that is a 
+Chi-Square test of independence which determines whether or not we can conclude 
+that two variables are related at the 5% significance level.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>For Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is a sample mosaic plot which generates 1000 theoretical survey observations. 
+They are random, but probability weighted, and are generated each time the page 
+is reloaded.
+<img src="figure/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>For Example Continued</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>##              
+##               About Right Too Little Too Much
+##   About Right         2.3        8.2     11.7
+##   Too Little          1.3        3.6      4.9
+##   Too Much            7.6       27.5     32.9
+</code></pre>
+
+<pre><code>## Number of cases in table: 1000 
+## Number of factors: 2 
+## Test for independence of all factors:
+##  Chisq = 1.9, df = 4, p-value = 0.8
+</code></pre>
+
+<pre><code>## [1] &quot;Null Hypothesis: These two variables are independent.&quot;
+</code></pre>
+
+<pre><code>## [1] &quot;Alternative Hypothesis: These two variables are not independent.&quot;
+</code></pre>
+
+<pre><code>## [1] &quot;Based on the observed p-value we cannot reject the null hypothesis.&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Caveat</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The data used in the app is drawn from another Coursera MOOC, Data Analysis and 
+Statistical Inference with Dr. Mine Çetinkaya-Rundel at Duke University. Although 
+I believe that the data is sound, I cannot speak to any preprocessing which the 
+data might have undergone in preparation for that course. Thus, it would be cavalier 
+to assume that actual conclusions about national attitudes towards spending can 
+be drawn from the app.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Problems</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>I did experience a few problems during the creation of this app. I would have 
+liked to improve the mosaic plot in a number of ways. The one used by this app 
+calls the &quot;mosaicplot&quot; function in the base {graphics} library. Although it it does 
+render the plot well, I would have preferred to superimpose the proportion labels 
+on the plot itself, as well as display the p-value as part of the plot, rather than 
+adding the separate table and text below. Also, I would liked to have colored the 
+plot in a more logical way that better reflects the associations between the variables. 
+&quot;mosaicplot&quot; is somewhat limited for these goals, but I was having trouble getting 
+other mosaic plot functions (e.g. &quot;mosaic&quot; from {vcd}) to work with shiny. Given 
+more time, or perhaps for future apps, these are the problems I would like to address.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='About The App'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='More About The App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='For Example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='For Example Continued'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Caveat'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Problems'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
